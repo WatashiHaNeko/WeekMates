@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  server:
+    image: "dotnet-core-sdk:week-mates"
+    build:
+      context: "./"
+      dockerfile: "Dockerfile"
+    container_name: "week-mates-server"
+    networks:
+      week-mates-network:
+
+networks:
+  week-mates-network:
+    name: "week-mates-network"
+
