@@ -7,6 +7,8 @@ services:
       context: "./"
       dockerfile: "Dockerfile"
     container_name: "week-mates-server"
+    volumes:
+      - "./WeekMates:/var/www/WeekMates"
     networks:
       week-mates-network:
 
