@@ -11,6 +11,8 @@ services:
       - "./WeekMates:/var/www/WeekMates"
     networks:
       week-mates-network:
+    env_file:
+      - "./.env"
 
 networks:
   week-mates-network:
