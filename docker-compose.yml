@@ -17,12 +17,12 @@ services:
       week-mates-network:
         ipv4_address: "172.10.0.2"
 
-  server:
+  api-server:
     image: "dotnet-core-sdk:week-mates"
     build:
       context: "./"
-      dockerfile: "Dockerfile.server"
-    container_name: "week-mates-server"
+      dockerfile: "Dockerfile.api-server"
+    container_name: "week-mates-api-server"
     env_file:
       - "./.env"
     volumes:
@@ -32,6 +32,19 @@ services:
     networks:
       week-mates-network:
         ipv4_address: "172.10.0.3"
+
+  swagger:
+    image: "swaggerapi/swagger-editor"
+    container_name: "week-mates-swagger-editor"
+    environment:
+      URL: "/var/swagger/swagger.yml"
+    volumes:
+      - "./swagger:/var/www/swagger"
+    expose:
+      - "8080"
+    networks:
+      week-mates-network:
+        ipv4_address: "172.10.0.4"
 
 networks:
   week-mates-network:

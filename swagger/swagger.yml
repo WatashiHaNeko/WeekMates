@@ -1,0 +1,53 @@
+swagger: "2.0"
+
+info:
+  version: "1.0.0"
+  title: "Week Mates"
+
+host: "api-server.localhost"
+
+basePath: "/"
+
+tags:
+  - name: "users"
+    description: "Operations about user"
+
+schemes:
+  - "http"
+
+paths:
+  "/users/signup":
+    post:
+      tags:
+        - "users"
+      summary: "Create new user"
+      description: ""
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "User identity information"
+          required: true
+          schema:
+            type: "object"
+            properties:
+              email:
+                type: "string"
+              password:
+                type: "string"
+      responses:
+        "200":
+          description: "Request success"
+          schema:
+            type: "object"
+            properties:
+              success:
+                type: "boolean"
+              error_code:
+                type: "string"
+              data:
+                type: "object"
+
