@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WeekMates.ApiServer.Text.Json;
 
 namespace WeekMates.ApiServer
 {
@@ -18,7 +19,13 @@ namespace WeekMates.ApiServer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services
+                .AddControllers()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.DictionaryKeyPolicy = new SnakeCase();
+                    options.JsonSerializerOptions.PropertyNamingPolicy = new SnakeCase();
+                });
 
             services
                 .AddCors(options =>
