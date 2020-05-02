@@ -1,25 +1,25 @@
 openapi: 3.0.1
 
 info:
-  title: Week Mates
+  title: "Week Mates"
   version: 1.0.0
 
 servers:
-  - url: http://api-server.localhost/
+  - url: "http://api-server.localhost/"
 
 tags:
   - name: users
-    description: Operations about users
+    description: "Operations about users"
 
 paths:
   /users/signup:
     post:
       tags:
         - users
-      summary: Create new user
+      summary: "Create new user"
       requestBody:
         required: true
-        description: User identity information
+        description: "User identity information"
         content:
           application/json:
             schema:
@@ -32,8 +32,8 @@ paths:
             examples:
               valid:
                 value:
-                  email: test@example.com
-                  password: 12345678
+                  email: "test@example.com"
+                  password: "12345678"
               empty:
                 value:
                   email: ""
@@ -41,7 +41,7 @@ paths:
 
       responses:
         200:
-          description: Request syntax OK
+          description: "Request syntax OK"
           content:
             application/json:
               schema:
@@ -75,9 +75,9 @@ paths:
                     error_code: 0 # Fix
                     data:
                       - field: email
-                        message: Please input email.
+                        message: "Please input email."
                       - field: password
-                        message: Please input password.
+                        message: "Please input password."
         400:
           description: Request syntax error
 
@@ -85,10 +85,10 @@ paths:
     post:
       tags:
         - users
-      summary: Identify user and return access key
+      summary: "Identify user and return access key"
       requestBody:
         required: true
-        description: User identity information
+        description: "User identity information"
         content:
           application/json:
             schema:
@@ -101,19 +101,19 @@ paths:
             examples:
               valid:
                 value:
-                  email: test@example.com
-                  password: 12345678
+                  email: "test@example.com"
+                  password: "12345678"
               empty:
                 value:
                   email: ""
                   password: ""
               identify_failed:
                 value:
-                  email: test@example.com
-                  password: abcdefgh
+                  email: "test@example.com"
+                  password: "abcdefgh"
       responses:
         200:
-          description: Request syntax OK
+          description: "Request syntax OK"
           content:
             application/json:
               schema:
@@ -147,18 +147,18 @@ paths:
                     error_code: 0 # Fix
                     data:
                       - field: email
-                        message: Please input email.
+                        message: "Please input email."
                       - field: password
-                        message: Please input password.
+                        message: "Please input password."
                 identify_failed:
                   value:
                     success: false
                     error_code: 0 # Fix
                     data:
                       - field: identify
-                        message: Please check email and password. No user has been matched with the identification data.
+                        message: "Please check email and password. No user has been matched with the identification data."
         400:
-          description: Request syntax error
+          description: "Request syntax error"
 
 components: {}
 
