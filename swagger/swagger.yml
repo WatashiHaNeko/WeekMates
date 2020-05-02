@@ -67,12 +67,12 @@ paths:
                 valid:
                   value:
                     success: true
-                    error_code: 0
+                    error_code: "0"
                     data: {}
                 empty:
                   value:
                     success: false
-                    error_code: 0 # Fix
+                    error_code: "0" # Fix
                     data:
                       - field: email
                         message: "Please input email."
@@ -139,12 +139,12 @@ paths:
                 valid:
                   value:
                     success: true
-                    error_code: 0
+                    error_code: "0"
                     data: {}
                 empty:
                   value:
                     success: false
-                    error_code: 0 # Fix
+                    error_code: "0" # Fix
                     data:
                       - field: email
                         message: "Please input email."
@@ -153,7 +153,7 @@ paths:
                 identify_failed:
                   value:
                     success: false
-                    error_code: 0 # Fix
+                    error_code: "0" # Fix
                     data:
                       - field: identify
                         message: "Please check email and password. No user has been matched with the identification data."
