@@ -74,10 +74,11 @@ paths:
                     success: false
                     error_code: "0" # Fix
                     data:
-                      - field: email
-                        message: "Please input email."
-                      - field: password
-                        message: "Please input password."
+                      validation_errors:
+                        - field: email
+                          message: "Please input email."
+                        - field: password
+                          message: "Please input password."
         400:
           description: Request syntax error
 
@@ -146,17 +147,19 @@ paths:
                     success: false
                     error_code: "0" # Fix
                     data:
-                      - field: email
-                        message: "Please input email."
-                      - field: password
-                        message: "Please input password."
+                      validation_errors:
+                        - field: email
+                          message: "Please input email."
+                        - field: password
+                          message: "Please input password."
                 identify_failed:
                   value:
                     success: false
                     error_code: "0" # Fix
                     data:
-                      - field: identify
-                        message: "Please check email and password. No user has been matched with the identification data."
+                      validation_errors:
+                        - field: identify
+                          message: "Please check email and password. No user has been matched with the identification data."
         400:
           description: "Request syntax error"
 
