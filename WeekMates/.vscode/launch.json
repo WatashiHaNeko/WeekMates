@@ -1,0 +1,15 @@
+{
+   "version": "0.2.0",
+   "configurations": [
+        {
+            "name": ".NET Core Launch (web)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "/var/www/WeekMates/WeekMates.ApiServer/bin/Debug/netcoreapp3.1/WeekMates.ApiServer.dll",
+            "args": [],
+            "cwd": "/var/www/WeekMates/WeekMates.ApiServer",
+            "stopAtEntry": false
+        }
+    ]
+}

@@ -25,12 +25,12 @@ services:
     container_name: "week-mates-api-server"
     env_file:
       - "./.env"
-    command:
-      - "dotnet"
-      - "watch"
-      - "--project"
-      - "/var/www/WeekMates/WeekMates.ApiServer"
-      - "run"
+    # command:
+    #   - "dotnet"
+    #   - "watch"
+    #   - "--project"
+    #   - "/var/www/WeekMates/WeekMates.ApiServer"
+    #   - "run"
     volumes:
       - "./WeekMates:/var/www/WeekMates"
     expose:
