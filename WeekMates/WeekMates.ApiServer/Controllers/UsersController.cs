@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using WeekMates.ApiServer.Models.Requests;
 
 namespace WeekMates.ApiServer.Controllers
 {
@@ -7,7 +8,7 @@ namespace WeekMates.ApiServer.Controllers
     public class UsersController : Controller
     {
         [HttpPost("signup")]
-        public JsonResult SignUp()
+        public JsonResult SignUp(UsersSignUpRequest request)
         {
             return Json(new {
                 Success = true,

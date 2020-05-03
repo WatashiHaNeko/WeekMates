@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WeekMates.ApiServer.Filters;
 using WeekMates.ApiServer.Text.Json;
 
 namespace WeekMates.ApiServer
@@ -20,7 +21,10 @@ namespace WeekMates.ApiServer
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddControllers()
+                .AddControllers(options =>
+                {
+                    options.Filters.Add(typeof(ValidateModelActionFilter), int.MinValue);
+                })
                 .AddJsonOptions(options =>
                 {
                     options.JsonSerializerOptions.DictionaryKeyPolicy = new SnakeCase();
